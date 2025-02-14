@@ -1,0 +1,1 @@
+import{_ as r,e as n,f as t,j as a,h as o}from"./CEfS1FRo.js";const s={};function c(l,e){return o(),n("div",null,e[0]||(e[0]=[t("h1",null,"Learn",-1),a(" ` ")]))}const _=r(s,[["render",c]]);export{_ as default};
