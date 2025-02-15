@@ -8,7 +8,6 @@ export const useTokenStore = defineStore("tokenData", {
 
   getters: {
     runningTokens: (state) => {
-      return state.tokens;
       return state.tokens.filter((token) => token.status === true);
     },
     upcomingTokens: (state) => {

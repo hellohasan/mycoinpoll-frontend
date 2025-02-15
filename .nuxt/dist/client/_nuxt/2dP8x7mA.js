@@ -1,1 +1,0 @@
-import{_ as r,c as a,a as n,g as t,o}from"./DHSRftXg.js";const s={};function c(l,e){return o(),a("div",null,e[0]||(e[0]=[n("h1",null,"Learn",-1),t(" ` ")]))}const d=r(s,[["render",c]]);export{d as default};

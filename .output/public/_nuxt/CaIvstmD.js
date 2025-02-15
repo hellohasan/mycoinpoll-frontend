@@ -1,0 +1,1 @@
+import{c as a,a as r,o as s}from"./es38th0r.js";import{u as n}from"./BvX6_ZYV.js";import"./D5yanAmG.js";import"./DYqHhC4v.js";import"./BADXMam8.js";const _={__name:"index",setup(p){const o=n(),{data:t}=o.useFetch("/user");return console.log(t.value),(l,e)=>(s(),a("div",null,e[0]||(e[0]=[r("h1",null,"Dashboard",-1)])))}};export{_ as default};

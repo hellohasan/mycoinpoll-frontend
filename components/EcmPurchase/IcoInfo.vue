@@ -20,18 +20,13 @@
 	import { Skeletor } from 'vue-skeletor';
 
 	const ecmContactAddress = ref('');
-	const isLoading = ref(true);
 	const config = useRuntimeConfig();
 
-	onMounted(async () => {
-		const response = await $fetch(`${config.public.apiBase}/get-ecm-info`);
-		ecmContactAddress.value = response.contract_address;
-		isLoading.value = false;
+	const { data, pending: isLoading } = useFetch(`${config.public.apiBase}/get-ecm-info`, {
+		onResponse: ({ response }) => {
+			ecmContactAddress.value = response._data.contract_address;
+		}
 	});
-
-	const getEcm = async () => {
-
-	}
 
 	const downloadPDF = (type) => {
 		let fileUrl;

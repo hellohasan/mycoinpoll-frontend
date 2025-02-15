@@ -56,9 +56,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      appName: process.env.APP_NAME || "MyCoinPoll Crypto Launchpad",
-      appUrl: process.env.APP_URL || "http://localhost:3000",
-      apiBase: process.env.API_BASE_URL || "http://mycoinpoll-backend.test/api",
+      appName: process.env.NUXT_APP_NAME || "MyCoinPoll Crypto Launchpad",
+      appUrl: process.env.NUXT_APP_URL || "http://localhost:3000",
+      apiBase: process.env.NUXT_API_BASE_URL || "http://mycoinpoll-backend.test/api",
 
       tokenSaleAddress: process.env.NUXT_TOKEN_SALE_ADDRESS,
       tokenAddress: process.env.NUXT_TOKEN_ADDRESS,

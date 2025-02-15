@@ -110,10 +110,6 @@
 
 <script setup>
 	import VueCountdown from '@chenfengyuan/vue-countdown';
-
-	import { useTokenStore } from "~/stores/useTokenStore";
-	import { storeToRefs } from "pinia";
-
 	const tokenStore = useTokenStore();
 	const { runningTokens: tokens } = storeToRefs(tokenStore);
 </script>

@@ -1,1 +1,0 @@
-import{c as a,a as s,o as r}from"./DHSRftXg.js";import{u as n}from"./Cp4M_364.js";import"./DtFY1lB3.js";import"./B8mn9GYR.js";const d={__name:"index",setup(l){const o=n(),{data:t}=o.useFetch("/user");return console.log(t.value),(p,e)=>(r(),a("div",null,e[0]||(e[0]=[s("h1",null,"Dashboard",-1)])))}};export{d as default};
