@@ -35,7 +35,7 @@
 							<p class="mt-3">{{ blog.short_content }}</p>
 							<div class="d-inline-block mt-4">
 								<nuxt-link :to="{ name: 'blog-detail-slug', params: { slug: blog.slug } }" class="btn-1-sm">
-									Learn more
+									View More
 									<span class="icon-rotate"><i class="fas fa-arrow-right"></i></span>
 								</nuxt-link>
 							</div>
