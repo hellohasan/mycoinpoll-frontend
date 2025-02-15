@@ -1,8 +1,8 @@
 // composables/useWeb3.ts
-import { useAppKit, useDisconnect, useAppKitAccount } from "@reown/appkit/vue";
-import SaleContractABI from "~/Abi/SaleContractABI.json";
-import ECMContractABI from "~/Abi/ECMContractABI.json";
-import IERC20ABI from "~/Abi/IERC20ABI.json";
+import { useAppKit, useDisconnect } from "@reown/appkit/vue";
+import SaleContractABI from "~/abi/SaleContractABI.json";
+import ECMContractABI from "~/abi/ECMContractABI.json";
+import IERC20ABI from "~/abi/IERC20ABI.json";
 
 export const useWeb3 = () => {
   const config = useRuntimeConfig();
