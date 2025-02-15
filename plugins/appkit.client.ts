@@ -1,7 +1,7 @@
 // plugins/appkit.client.ts
 import { createAppKit } from "@reown/appkit/vue";
 import { EthersAdapter } from "@reown/appkit-adapter-ethers";
-import { mainnet } from "@reown/appkit/networks";
+import { mainnet, sepolia } from "@reown/appkit/networks";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Initialize AppKit
   const appKit = createAppKit({
     adapters: [new EthersAdapter()],
-    networks: [mainnet],
+    networks: [mainnet, sepolia],
     metadata: {
       name: "MyCoinPoll",
       description: "MyCoinPoll.Com | World's No 1 Crypto Launchpad",

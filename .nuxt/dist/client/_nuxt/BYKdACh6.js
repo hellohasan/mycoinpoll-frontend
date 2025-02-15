@@ -1,1 +1,0 @@
-import{_ as r,e as n,f as o,h as s}from"./CEfS1FRo.js";const t={};function a(c,e){return s(),n("div",null,e[0]||(e[0]=[o("h1",null,"Androverse",-1)]))}const d=r(t,[["render",a]]);export{d as default};

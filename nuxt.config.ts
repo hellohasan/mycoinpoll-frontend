@@ -83,4 +83,9 @@ export default defineNuxtConfig({
       "2xl": 1536,
     },
   },
+  vite: {
+    server: {
+      allowedHosts: ["mycoinpoll-frontend.test"],
+    },
+  },
 });

@@ -1,1 +1,0 @@
-{"file":"login-DxOtYKZw.js","mappings":";;;;;;;;;;;;;;;AAAA,SAAA,eAAA,MAAA,OAAA,SAAA,QAAA;;;;;;;;;;","names":[],"sources":["../../../../pages/login.vue"],"sourcesContent":["<template>\n\t<div>\n\t\t<h1>Login</h1>\n\t</div>\n</template>\n\n<script lang=\"ts\" setup>\n</script>\n\n<style>\n</style>"],"version":3}

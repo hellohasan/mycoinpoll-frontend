@@ -1,0 +1,1 @@
+{"file":"news-BzZ5ydF8.js","mappings":";;;;;;;;;;;;;;;;;;;;;AAAA,SAAA,eAAA,MAAA,OAAA,SAAA,QAAA;;;;;;;;;;","names":[],"sources":["../../../../pages/news.vue"],"sourcesContent":["<template>\n\t<div>\n\t\t<h1>News</h1>\n\t</div>\n</template>\n\n<script lang=\"ts\" setup>\n</script>\n\n<style>\n</style>"],"version":3}

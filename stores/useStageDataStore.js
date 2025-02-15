@@ -14,6 +14,7 @@ export const useStageDataStore = defineStore("stageData", {
       tokensSold: null,
       percentageSold: null,
     },
+    isStageLoading: false,
     lastUpdated: null,
   }),
 
@@ -30,6 +31,7 @@ export const useStageDataStore = defineStore("stageData", {
       if (!process.client) return;
       if (!forceLoad && !this.isDataStale) return;
       try {
+        this.isStageLoading = true;
         const { alchemyLink, SaleAddress, SaleContractABI } = useWeb3();
         if (!alchemyLink) {
           throw new Error("Alchemy link is not configured");
@@ -61,6 +63,8 @@ export const useStageDataStore = defineStore("stageData", {
         this.lastUpdated = new Date().getTime();
       } catch (error) {
         throw error;
+      } finally {
+        this.isStageLoading = false;
       }
     },
 

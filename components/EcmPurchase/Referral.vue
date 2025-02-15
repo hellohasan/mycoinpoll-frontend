@@ -7,7 +7,7 @@
 		<div v-if="referralLink" class="address-text input-group d-flex align-items-center position-relative secondary-btn-sm">
 			<span class="gradient-color" id="referral_link">Referral Link:</span>
 			<input type="text" class="form-control" :value="referralLink" readonly="" id="referral_link" placeholder="Referral Link" />
-			<button class="text-copy-btn" type="button" @click.prevent="copyNow" id="referred_by"><i class="far fa-copy"></i></button>
+			<button class="text-copy-btn" type="button" @click.prevent="copyToClipboard" id="referred_by"><i class="far fa-copy"></i></button>
 		</div>
 		<div class="address-text input-group d-flex align-items-center secondary-btn-sm">
 			<span class="gradient-color" id="referred_by">Referred By:</span>
@@ -19,9 +19,30 @@
 
 <script setup>
 	import { useAppKitAccount } from '@reown/appkit/vue';
+	import { isAddress } from 'ethers';
+
 	const wallet = useAppKitAccount();
 	const store = useReferralStore();
+	const authStore = useAuthStore();
+	const { authenticated, user } = storeToRefs(authStore);
 	const referralLink = ref('');
+	const config = useRuntimeConfig();
+	const { copyNow } = useCopy()
+
+
+	const copyToClipboard = async () => {
+		await copyNow(referralLink.value);
+	}
+
+	if (process.client) {
+		watch(authenticated, (newAuth) => {
+			if (newAuth) {
+				referralLink.value = `${config.public.appUrl}?ref=${user.value.unique_id}`
+			} else {
+				referralLink.value = '';
+			}
+		}, { immediate: true })
+	}
 
 	const validateReferral = (event) => {
 		const input = event.target.value;

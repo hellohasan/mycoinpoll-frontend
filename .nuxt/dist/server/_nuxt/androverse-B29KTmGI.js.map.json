@@ -1,1 +1,0 @@
-{"file":"androverse-B29KTmGI.js","mappings":";;;;;;;;;;;;;;;AAAA,SAAA,eAAA,MAAA,OAAA,SAAA,QAAA;;;;;;;;;;","names":[],"sources":["../../../../pages/androverse.vue"],"sourcesContent":["<template>\n\t<div>\n\t\t<h1>Androverse</h1>\n\t</div>\n</template>\n\n<script setup>\n\n</script>\n\n<style lang=\"scss\" scoped>\n</style>"],"version":3}
