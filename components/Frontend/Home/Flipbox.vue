@@ -1,7 +1,7 @@
 <template>
 	<div v-show="allImagesLoaded" class="logo-flip-box">
 		<div v-for="(image, index) in images" :key="index" class="flip-item">
-			<NuxtImg :src="image" alt="logo" loading="lazy" />
+			<NuxtImg :src="image" alt="logo" loading="lazy" width="492" height="491" format="webp" />
 		</div>
 	</div>
 </template>

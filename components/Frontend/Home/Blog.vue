@@ -24,7 +24,7 @@
 				<div class="col-lg-4 col-md-6" v-for="blog in blogList" :key="blog.id">
 					<div class="blog-post-card h-100">
 						<div class="blog-post-thumbnails">
-							<img :src="blog.featured_image" alt="img" class="w-100 clip-path-2" />
+							<nuxt-img :src="blog.featured_image" loading="lazy" format="webp" alt="img" class="w-100 clip-path-2" />
 						</div>
 						<div class="blog-post-content mt-20">
 							<span class="publish-date d-flex align-items-center">

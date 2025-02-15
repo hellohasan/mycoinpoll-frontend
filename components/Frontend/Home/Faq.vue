@@ -5,7 +5,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6">
 					<div class="frequently-thumnail">
-						<nuxt-img src="/images/thumbnail/frequently.png" loading="lazy" format="webp" :placeholder="[614, 527]" alt="FAQ Thumbnail" />
+						<nuxt-img src="/images/thumbnail/frequently.png" loading="lazy" format="webp" :placeholder="[614, 527]" width="614" height="527" alt="FAQ Thumbnail" />
 					</div>
 				</div>
 				<div class="col-lg-6">

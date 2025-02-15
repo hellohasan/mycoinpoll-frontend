@@ -40,4 +40,5 @@ export { useTokenStore } from '../stores/useTokenStore';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
 export { storages as piniaPluginPersistedstate } from '../node_modules/pinia-plugin-persistedstate/dist/nuxt/runtime/storages';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
+export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

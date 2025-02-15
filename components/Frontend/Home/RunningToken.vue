@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="running-token-view-box d-flex align-items-center justify-content-between border-indexcing flex-wrap">
 				<div class="token-view-box-text d-flex align-items-center">
-					<NuxtImg src="/images/icon/bell.png" alt="icon" />
+					<NuxtImg src="/images/icon/bell.png" width="25" height="25" format="webp" loading="lazy" alt="icon" />
 					<p>Stake now and secure your early position in the ECM Token launch. Stay tuned for the upcoming CDC Token, set to revolutionize the next phase of IDOs.</p>
 				</div>
 				<div class="token-view-btn">
@@ -19,7 +19,7 @@
 					<div v-else v-for="(token, i) in tokens" :key="token.id" class="token-card-main-area d-flex align-items-center" :class="{ mt40: i !== 0 }">
 						<div class="token-card-thumnail-text d-flex">
 							<div class="token-card-thumnails position-relative">
-								<NuxtImg :src="token.feature_image" :alt="token.full_name" loading="lazy" :placeholder="[445, 370]" class="clip-path w-100" />
+								<NuxtImg :src="token.feature_image" :alt="token.full_name" loading="lazy" width="445" height="370" format="webp" :placeholder="[445, 370]" class="clip-path w-100" />
 								<ul class="d-flex align-items-center">
 									<li v-for="(label, index) in token.tags" :key="index">
 										<span

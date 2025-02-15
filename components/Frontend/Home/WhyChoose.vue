@@ -21,7 +21,7 @@
 			<div v-else class="row mt40 gy-4">
 				<div v-for="card in cards" :key="card.title" class="col-xl-3 col-lg-6">
 					<div class="why-choose-card common-card text-center">
-						<nuxt-img :src="card.icon" :placeholder="75" loading="lazy" format="webp" :alt="card.title" />
+						<nuxt-img :src="card.icon" :placeholder="75" width="75" height="75" loading="lazy" format="webp" :alt="card.title" />
 						<h4>{{ card.title }}</h4>
 						<p>{{ card.description }}</p>
 					</div>

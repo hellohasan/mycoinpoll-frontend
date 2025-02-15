@@ -12,7 +12,7 @@
 					<div v-else v-for="(token, i) in tokens" :key="token.id" class="token-card-main-area d-flex align-items-center" :class="{ mt40: i !== 0 }">
 						<div class="token-card-thumnail-text d-flex">
 							<div class="token-card-thumnails position-relative">
-								<NuxtImg :src="token.feature_image" :alt="token.full_name" loading="lazy" :placeholder="[445, 370]" class="clip-path w-100" />
+								<NuxtImg :src="token.feature_image" :alt="token.full_name" loading="lazy" :placeholder="[445, 370]" width="445" height="370" format="webp" class="clip-path w-100" />
 								<ul class="d-flex align-items-center">
 									<li v-for="(label, index) in token.tags" :key="index">
 										<span

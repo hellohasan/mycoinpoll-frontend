@@ -18,7 +18,7 @@
 				<div v-for="chain in chains" :key="chain.name" class="col-xl-4 col-lg-6">
 					<div class="multi-chain-card d-flex align-items-center">
 						<div class="multi-chain-card-logo">
-							<nuxt-img :src="chain.icon" loading="lazy" placeholder="" :alt="chain.name" />
+							<nuxt-img :src="chain.icon" loading="lazy" width="60" height="60" :placeholder="[60, 60]" format="webp" :alt="chain.name" />
 						</div>
 						<div class="multi-chain-card-text">
 							<h4>{{ chain.name }}</h4>
