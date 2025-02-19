@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  plugins: ["~/plugins/jquery.client.ts", "~/plugins/appkit.client.ts"],
+  plugins: ["~/plugins/jquery.client.ts", "~/plugins/bootstrap.client.ts", "~/plugins/appkit.client.ts"],
   css: ["bootstrap/dist/css/bootstrap.css", "slick-carousel/slick/slick.css", "slick-carousel/slick/slick-theme.css", "@/assets/css/flipbox.css", "@/assets/css/main.css", "@/assets/css/responsive.css", "vue-skeletor/dist/vue-skeletor.css"],
 
   app: {
@@ -71,8 +71,12 @@ export default defineNuxtConfig({
 
   modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt", "@nuxt/image"],
   image: {
-    quality: 80,
+    quality: 20,
     format: ["webp", "jpg", "png"],
+    modifiers: {
+      placeholder: "blur",
+      quality: 10,
+    },
     screens: {
       xs: 320,
       sm: 640,

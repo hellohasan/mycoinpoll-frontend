@@ -47,11 +47,6 @@
 	</section>
 </template>
 <script setup>
-
 	const config = useRuntimeConfig();
-	const { data: blogList, pending, error } = await useFetch(`${config.public.apiBase}/blogs`, {
-		onResponse({ response }) {
-			console.log(response._data);
-		}
-	});
+	const { data: blogList, pending, error } = await useFetch(`${config.public.apiBase}/blogs`);
 </script>

@@ -3,37 +3,58 @@ import { defineStore } from "pinia";
 export const useTokenStore = defineStore("tokenData", {
   state: () => ({
     tokens: [],
-    token: {},
+    token: null,
+    loading: false,
+    error: null,
   }),
 
   getters: {
-    runningTokens: (state) => {
-      return state.tokens.filter((token) => token.status === true);
-    },
-    upcomingTokens: (state) => {
-      return state.tokens.filter((token) => token.status === false);
-    },
+    runningTokens: (state) => state.tokens.filter((token) => token.status === true),
+    upcomingTokens: (state) => state.tokens.filter((token) => token.status === false),
   },
 
   actions: {
     async getTokens() {
       const config = useRuntimeConfig();
+      this.loading = true;
+      this.error = null;
+
       try {
         const data = await $fetch(`${config.public.apiBase}/tokens`);
-        this.tokens = data;
-      } catch (error) {
-        console.error("Error fetching tokens");
+        this.tokens = data || [];
+      } catch (err) {
+        this.error = err.message || "Failed to fetch tokens";
+      } finally {
+        this.loading = false;
       }
     },
 
     async getSingleToken(slug) {
-      const config = useRuntimeConfig();
-      try {
-        const data = await $fetch(`${config.public.apiBase}/token/${slug}`);
-        this.token = data;
-      } catch (error) {
-        console.error("Error fetching single token");
+      if (!slug) {
+        this.error = "Slug is required";
+        return null;
       }
+
+      const config = useRuntimeConfig();
+      this.loading = true;
+      this.error = null;
+
+      try {
+        this.token = await $fetch(`${config.public.apiBase}/token/${slug}`);
+      } catch (err) {
+        this.error = err.message || "Failed to fetch token";
+        this.token = null;
+      } finally {
+        this.loading = false;
+      }
+
+      return this.token;
+    },
+
+    // Reset single token data
+    clearToken() {
+      this.token = null;
+      this.error = null;
     },
   },
 });

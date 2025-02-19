@@ -24,6 +24,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/dev-server-logs.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
   InjectionType<typeof import("../../plugins/jquery.client")> &
+  InjectionType<typeof import("../../plugins/bootstrap.client")> &
   InjectionType<typeof import("../../plugins/appkit.client")> &
   InjectionType<typeof import("../../plugins/toast.client")>
 

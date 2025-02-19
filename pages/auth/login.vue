@@ -37,7 +37,7 @@
 										<span class="icon-rotate"><i class="fas fa-arrow-right"></i></span>
 									</button>
 								</div>
-								<div class="d-flex justify-content-center mt20 mb20">
+								<div class="d-flex justify-content-center mt-20 mb20">
 									<p class="modal-or-divider or-divider w-80">OR</p>
 								</div>
 

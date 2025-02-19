@@ -1,11 +1,27 @@
- 
-@media screen and (min-width:1280px) {
+ @media screen and (min-width:1280px) {
   .navbar-nav {
     gap:15px;
   }
   .upcoming-label {
     right: 2%;
     top: 10px;
+  }
+  .ico-tab-btn.gradient-btn{
+    padding: 10px 20px;
+  }
+  .ico-tab ul li img{
+    height: 32px;
+    width: 32px;
+    margin-right:8px;
+   }
+   .ico-tab ul li{
+    font-size: 18px;
+  }
+  .ico-tab-select-icon{
+    right:20px;
+  }
+  .ico-tab-select-icon i{
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -53,7 +69,7 @@
     min-width:225px
    }
    .search-box-area {
-    min-width: 150px;
+    min-width:150px;
   }
 }
 @media screen and (max-width:1280px) {
@@ -259,8 +275,18 @@
   .coin-hero-area .box-bg{
     margin-top: 0;
   }
+  .staking-section{
+    flex-wrap: wrap;
+  }
+  .staking-righ-area{
+    order: -2;
+  }
+  .staking-left-area,.staking-righ-area{
+    width: 100%;
+  }
 }
 @media screen and (max-width: 991px) {
+  
   .popular-post-item{
     width:48%;
   }
@@ -456,6 +482,14 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .publish-date {
+    font-size: 14px;
+  }
+  .btn-group-card li a, .btn-group-card li button {
+    gap:5px;
+    padding: 6px 6px;
+    font-size: 14px;
+  }
   .ico-tab ul{ 
     justify-content: center;
     flex-wrap: wrap;
@@ -467,7 +501,7 @@
     padding: 30px 15px;
   }
   .clip-text{
-    width: 56%;
+    width: 56% !important;
   }
   .address-text {
     padding: 6px 10px;
@@ -768,7 +802,6 @@
     /* .token-rollout-right-side{
       margin-top:230px;
     } */
-   
     .pagination-inner li a {
       min-width: 36px;
       height: 40px;
@@ -783,7 +816,6 @@
     .apply-launch-part label{
       font-size:15px;
      }
-
     .subscribe-form .subscribe-btn{
       margin: auto;
       margin-top: 20px;
@@ -814,7 +846,6 @@
     .line-divider2{
       margin:20px 0 !important;
     }
-  
     .input input, .input textarea {
       padding: 10px 16px;
     }
@@ -970,7 +1001,6 @@
     .notification-text h5 {
       font-size: 15px;
       font-weight: 500;
-      
     }
     .p30 {
       padding: 15px;
@@ -995,7 +1025,9 @@
     .mt-120 {
       margin-top: 90px;
     }
-     
+    .dashboard-right-header-area{
+      padding-left: 0;
+    }
 }
 @media screen and (max-width:480px) {
   .dashboard-body, .dashboard-left {
@@ -1058,5 +1090,22 @@
   .ico-tab ul li{
     width: 100% !important;
   }
+  .selected-days {
+    padding: 5px 12px;
+  }
+  .selected-days span,.page-title  {
+    font-size: 20px;
+  }
+  .staking-righ-area ul{
+    flex-wrap: wrap;
+  }
+  .staking-righ-area ul li{
+    width: 100% !important;
+  }
+  .ellipse{
+    z-index: -2;
+  }
+  .pagination .subscribe-btn {
+    min-width: 60px !important;
+  }
 }
-

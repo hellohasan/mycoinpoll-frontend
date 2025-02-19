@@ -8,7 +8,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 token-card-width">
-					<SkeletonsTokenCardSkeleton v-if="tokens.length === 0" />
+					<SkeletorsTokenCard v-if="tokens.length === 0" />
 					<div v-else v-for="(token, i) in tokens" :key="token.id" class="token-card-main-area d-flex align-items-center" :class="{ mt40: i !== 0 }">
 						<div class="token-card-thumnail-text d-flex">
 							<div class="token-card-thumnails position-relative">
