@@ -20,7 +20,13 @@
 			</div>
 			<FrontendTokenStat />
 		</div>
-		<EcmPurchase />
+
+		<section class="ecm-section position-relative ptb120">
+			<div class="container">
+				<EcmPurchase />
+			</div>
+		</section>
+
 		<FrontendTokenInfo />
 		<ClientOnly>
 			<FrontendTokenRoadmap />

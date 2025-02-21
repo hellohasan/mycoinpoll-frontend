@@ -347,7 +347,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "appName": "MyCoinPoll Crypto Launchpad",
-    "appUrl": "http://localhost:3000/",
+    "appUrl": "http://localhost:3000",
     "apiBase": "http://mycoinpoll-backend.test/api/v1",
     "tokenSaleAddress": "0x02f2aA15675aED44A117aC0c55E795Be9908543D",
     "tokenAddress": "0x30C8E35377208ebe1b04f78B3008AAc408F00D1d",

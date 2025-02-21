@@ -2,7 +2,11 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'EcmPurchaseIcoInfo': typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
+      'BackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
+    'BackendPartialsPagination': typeof import("../components/Backend/Partials/Pagination.vue")['default']
+    'BackendPartialsSidebar': typeof import("../components/Backend/Partials/Sidebar.vue")['default']
+    'BackendPartialsTokenCard': typeof import("../components/Backend/Partials/TokenCard.vue")['default']
+    'EcmPurchaseIcoInfo': typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
     'EcmPurchaseIcoStat': typeof import("../components/EcmPurchase/IcoStat.vue")['default']
     'EcmPurchase': typeof import("../components/EcmPurchase/Index.vue")['default']
     'EcmPurchaseReferral': typeof import("../components/EcmPurchase/Referral.vue")['default']
@@ -35,6 +39,7 @@ interface _GlobalComponents {
     'FrontendTokenRoadmap': typeof import("../components/Frontend/Token/Roadmap.vue")['default']
     'FrontendTokenStat': typeof import("../components/Frontend/Token/Stat.vue")['default']
     'IconsDisconnect': typeof import("../components/Icons/Disconnect.vue")['default']
+    'IconsFire': typeof import("../components/Icons/Fire.vue")['default']
     'SkeletorsTokenCard': typeof import("../components/Skeletors/TokenCard.vue")['default']
     'SkeletorsTokenStat': typeof import("../components/Skeletors/TokenStat.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -60,7 +65,11 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyEcmPurchaseIcoInfo': typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
+      'LazyBackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
+    'LazyBackendPartialsPagination': typeof import("../components/Backend/Partials/Pagination.vue")['default']
+    'LazyBackendPartialsSidebar': typeof import("../components/Backend/Partials/Sidebar.vue")['default']
+    'LazyBackendPartialsTokenCard': typeof import("../components/Backend/Partials/TokenCard.vue")['default']
+    'LazyEcmPurchaseIcoInfo': typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
     'LazyEcmPurchaseIcoStat': typeof import("../components/EcmPurchase/IcoStat.vue")['default']
     'LazyEcmPurchase': typeof import("../components/EcmPurchase/Index.vue")['default']
     'LazyEcmPurchaseReferral': typeof import("../components/EcmPurchase/Referral.vue")['default']
@@ -93,6 +102,7 @@ interface _GlobalComponents {
     'LazyFrontendTokenRoadmap': typeof import("../components/Frontend/Token/Roadmap.vue")['default']
     'LazyFrontendTokenStat': typeof import("../components/Frontend/Token/Stat.vue")['default']
     'LazyIconsDisconnect': typeof import("../components/Icons/Disconnect.vue")['default']
+    'LazyIconsFire': typeof import("../components/Icons/Fire.vue")['default']
     'LazySkeletorsTokenCard': typeof import("../components/Skeletors/TokenCard.vue")['default']
     'LazySkeletorsTokenStat': typeof import("../components/Skeletors/TokenStat.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -124,6 +134,10 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const BackendPartialsHeader: typeof import("../components/Backend/Partials/Header.vue")['default']
+export const BackendPartialsPagination: typeof import("../components/Backend/Partials/Pagination.vue")['default']
+export const BackendPartialsSidebar: typeof import("../components/Backend/Partials/Sidebar.vue")['default']
+export const BackendPartialsTokenCard: typeof import("../components/Backend/Partials/TokenCard.vue")['default']
 export const EcmPurchaseIcoInfo: typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
 export const EcmPurchaseIcoStat: typeof import("../components/EcmPurchase/IcoStat.vue")['default']
 export const EcmPurchase: typeof import("../components/EcmPurchase/Index.vue")['default']
@@ -157,6 +171,7 @@ export const FrontendTokenInfo: typeof import("../components/Frontend/Token/Info
 export const FrontendTokenRoadmap: typeof import("../components/Frontend/Token/Roadmap.vue")['default']
 export const FrontendTokenStat: typeof import("../components/Frontend/Token/Stat.vue")['default']
 export const IconsDisconnect: typeof import("../components/Icons/Disconnect.vue")['default']
+export const IconsFire: typeof import("../components/Icons/Fire.vue")['default']
 export const SkeletorsTokenCard: typeof import("../components/Skeletors/TokenCard.vue")['default']
 export const SkeletorsTokenStat: typeof import("../components/Skeletors/TokenStat.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -182,6 +197,10 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyBackendPartialsHeader: typeof import("../components/Backend/Partials/Header.vue")['default']
+export const LazyBackendPartialsPagination: typeof import("../components/Backend/Partials/Pagination.vue")['default']
+export const LazyBackendPartialsSidebar: typeof import("../components/Backend/Partials/Sidebar.vue")['default']
+export const LazyBackendPartialsTokenCard: typeof import("../components/Backend/Partials/TokenCard.vue")['default']
 export const LazyEcmPurchaseIcoInfo: typeof import("../components/EcmPurchase/IcoInfo.vue")['default']
 export const LazyEcmPurchaseIcoStat: typeof import("../components/EcmPurchase/IcoStat.vue")['default']
 export const LazyEcmPurchase: typeof import("../components/EcmPurchase/Index.vue")['default']
@@ -215,6 +234,7 @@ export const LazyFrontendTokenInfo: typeof import("../components/Frontend/Token/
 export const LazyFrontendTokenRoadmap: typeof import("../components/Frontend/Token/Roadmap.vue")['default']
 export const LazyFrontendTokenStat: typeof import("../components/Frontend/Token/Stat.vue")['default']
 export const LazyIconsDisconnect: typeof import("../components/Icons/Disconnect.vue")['default']
+export const LazyIconsFire: typeof import("../components/Icons/Fire.vue")['default']
 export const LazySkeletorsTokenCard: typeof import("../components/Skeletors/TokenCard.vue")['default']
 export const LazySkeletorsTokenStat: typeof import("../components/Skeletors/TokenStat.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']

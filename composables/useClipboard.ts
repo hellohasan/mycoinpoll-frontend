@@ -1,8 +1,8 @@
-// composables/useCopy.ts
+// composables/useClipboard.ts
 import { ref } from "vue";
 import { useToastAlert } from "~/composables/useToastAlert";
 
-export function useCopy() {
+export function useClipboard() {
   const copied = ref(false);
   const { toastSuccess, toastError } = useToastAlert();
 

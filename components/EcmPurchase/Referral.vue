@@ -27,7 +27,7 @@
 	const { authenticated, user } = storeToRefs(authStore);
 	const referralLink = ref('');
 	const config = useRuntimeConfig();
-	const { copyNow } = useCopy()
+	const { copyNow } = useClipboard();
 
 
 	const copyToClipboard = async () => {

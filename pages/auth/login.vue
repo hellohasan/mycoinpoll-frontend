@@ -11,7 +11,7 @@
 							<div class="row gy-3">
 								<div class="form-group col-md-12">
 									<label for="username">Email or Username</label>
-									<div class="input bg-border-input">
+									<div class="input bg-border-input d-flex align-items-center">
 										<input v-model="form.username" type="text" class="form-control" :class="{ 'is-invalid': form.errors.has('username') }" id="username" placeholder="Enter email or username or Unique ID" />
 									</div>
 									<FormGroupHasError :form="form" field="username" />
@@ -78,7 +78,7 @@
 	const isLoadingWallet = ref(false);
 	const walletText = ref('Connect Wallet');
 	const { toastError } = useToastAlert();
-	const api = useApi();
+	const { getCsrfToken } = useCsrf();
 
 	const form = useVForm({
 		username: '',
@@ -86,6 +86,7 @@
 	});
 
 	const handelForm = async () => {
+		await getCsrfToken();
 		await form.submit('/auth/login').then(async (data) => {
 			await loginAction(data);
 			toastSuccess("Login successfully Completed.");
@@ -105,6 +106,8 @@
 		].join("\n");
 	};
 
+	const { useMyFetch } = useApi();
+	const config = useRuntimeConfig();
 	const handelWeb3Login = async () => {
 		isLoadingWallet.value = true;
 		if (!wallet.value.isConnected) {
@@ -121,8 +124,10 @@
 			}
 			const message = generateSignatureMessage(signer.address);
 			const signature = await signer.signMessage(message);
-			const { data, error } = await api.useFetch('/auth/web3-login', {
+			await getCsrfToken();
+			const { data } = await useMyFetch('/auth/web3-login', {
 				method: 'POST',
+				server: false,
 				body: {
 					message,
 					address: signer.address,

@@ -14,7 +14,7 @@
 									<div class="form-group col-md-12">
 										<label for="unique_id">Enter Unique ID:</label>
 										<div class="input bg-border-input">
-											<input v-model="form.unique_id" type="unique_id" class="form-control" :class="{ 'is-invalid': form.errors.has('unique_id') }" id="unique_id" placeholder="Enter Unique ID" />
+											<input v-model="form.unique_id" type="unique_id" :class="{ 'is-invalid': form.errors.has('unique_id') }" id="unique_id" placeholder="Enter Unique ID" />
 										</div>
 										<FormGroupHasError :form="form" field="unique_id" />
 									</div>
@@ -53,11 +53,13 @@
 	const { toastSuccess } = useToastAlert();
 
 	const handelSubmit = async () => {
-		await form.post('/auth/forget-password').then((res) => {
+		await form.submit('/auth/forget-password').then((res) => {
 			toastSuccess('Reset link send to Email Address.');
 			form.reset();
 			form.clear();
-		}).catch((error) => { })
+		}).catch((error) => {
+			console.log(error);
+		})
 	}
 </script>
 

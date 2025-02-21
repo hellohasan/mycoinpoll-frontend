@@ -2,7 +2,7 @@
 	<div>
 		<div class="coin-details-hero-bg position-relative coin-details-hero-border custom-container">
 			<FrontendBreadcrumb />
-			<div class="coin-hero-area ptb50 position">
+			<div v-if="!pending" class="coin-hero-area ptb50 position">
 				<div class="frequently-circle"></div>
 				<div class="container">
 					<div class="row align-items-center">
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 
-		<section class="learn-earn-card-section mt80 position-relative">
+		<section v-if="!pending" class="learn-earn-card-section mt80 position-relative">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -65,7 +65,7 @@
 	const route = useRoute();
 	const slug = route.params.slug;
 	const { useMyFetch } = useApi();
-	const { data: news } = useMyFetch(`get-news/${slug}`);
+	const { data: news, pending } = await useMyFetch(`get-news/${slug}`);
 </script>
   
 <style>

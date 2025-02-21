@@ -1,129 +1,125 @@
 <template>
-	<section class="ecm-section position-relative ptb120">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-xl-6">
-					<EcmPurchaseIcoInfo />
-				</div>
-				<div class="col-xl-6">
-					<div class="ecm-right-box">
-						<EcmPurchaseIcoStat />
+	<div class="row align-items-center">
+		<div class="col-xl-6">
+			<EcmPurchaseIcoInfo />
+		</div>
+		<div class="col-xl-6">
+			<div class="ecm-right-box">
+				<EcmPurchaseIcoStat />
 
-						<div class="ecm-form mt15">
-							<h4 v-if="isStageLoading" class="mb20">
-								<Skeletor height="36" pill class="mt-2" />
-							</h4>
-							<h4 v-else class="mb20">ICO is Live</h4>
+				<div class="ecm-form mt15">
+					<h4 v-if="isStageLoading" class="mb20">
+						<Skeletor height="36" pill class="mt-2" />
+					</h4>
+					<h4 v-else class="mb20">ICO is Live</h4>
 
-							<div class="ico-tab mb20">
-								<template v-if="isStageLoading">
-									<div class="d-flex align-items-center g-20">
-										<Skeletor width="50%" as="div" height="54" pill />
-										<Skeletor width="50%" as="div" height="54" pill />
-									</div>
-								</template>
-								<ul v-else class="d-flex align-items-center g-20">
-									<li class="ico-tab-btn gradient-btn w-50" :class="{ active: activeTab === 'eth-coin-form' }" @click="switchTab('eth-coin-form')">
-										<nuxt-img src="/images/icon/eth.png" loading="lazy" alt="eth" />
-										Buy with ETH
-										<span class="ico-tab-select-icon"><i class="fa-solid fa-circle-check"></i></span>
-									</li>
-									<li class="ico-tab-btn gradient-btn w-50" :class="{ active: activeTab === 'usdt-coin-form' }" @click="switchTab('usdt-coin-form')">
-										<nuxt-img src="/images/icon/usdt.png" alt="ecm" />
-										Buy with USDT
-										<span class="ico-tab-select-icon"><i class="fa-solid fa-circle-check"></i></span>
-									</li>
-								</ul>
-							</div>
-
-							<div v-show="activeTab === 'eth-coin-form'" class="ico-tab-content">
-								<template v-if="isStageLoading">
-									<Skeletor height="30" pill class="mb-4" />
-								</template>
-								<ul v-else class="d-flex justify-content-center mt-1 mb20">
-									<li class="text-white">1 ECM = {{ stageData.price }} ETH</li>
-								</ul>
-
-								<div class="subscribe-form">
-									<template v-if="isStageLoading">
-										<Skeletor v-for="i in 3" :key="i" class="mt-2" height="55"></Skeletor>
-									</template>
-									<template v-else>
-										<form @submit.prevent="purchaseECM('ETH')">
-											<div class="subscribe-email mb20 d-flex align-items-center mw-100">
-												<nuxt-img src="/images/icon/ecm.png" alt="icon" />
-												<input v-model="ecm" type="text" placeholder="ECM Amount" :readonly="isPurchaseProcessing" />
-											</div>
-											<div class="subscribe-email mb20 d-flex align-items-center mw-100">
-												<nuxt-img src="/images/icon/eth.png" alt="icon" />
-												<input v-model="eth" type="text" placeholder="ETH Payable" :readonly="isPurchaseProcessing" />
-											</div>
-											<button v-if="wallet.isConnected" type="submit" :disabled="isPurchaseProcessing" class="btn1 primary-btn submit-btn w-100 mb20">
-												<i v-show="isPurchaseProcessing" class="fa fa-spinner fa-spin me-1"></i>
-												{{ walletText }}
-											</button>
-											<button v-else type="button" @click="modal.open()" class="btn1 primary-btn submit-btn w-100 mb20">{{ walletText }}</button>
-										</form>
-									</template>
-								</div>
-							</div>
-							<div v-show="activeTab === 'usdt-coin-form'" class="ico-tab-content">
-								<template v-if="isStageLoading">
-									<Skeletor height="30" pill class="mb-4" />
-								</template>
-								<ul v-else class="d-flex justify-content-center mt-1 mb20">
-									<li class="text-white">1 ECM = {{ stageData.usdtPrice }} USDT</li>
-								</ul>
-
-								<div class="subscribe-form">
-									<template v-if="isStageLoading">
-										<Skeletor v-for="i in 3" :key="i" class="mt-2" height="55"></Skeletor>
-									</template>
-									<template v-else>
-										<form @submit.prevent="purchaseECM('USDT')">
-											<div class="subscribe-email mb20 d-flex align-items-center mw-100">
-												<nuxt-img src="/images/icon/ecm.png" alt="icon" />
-												<input v-model="ecm" type="text" placeholder="ECM Amount" :readonly="isPurchaseProcessing" />
-											</div>
-											<div class="subscribe-email mb20 d-flex align-items-center mw-100">
-												<nuxt-img src="/images/icon/usdt.png" alt="icon" />
-												<input v-model="usdt" type="text" placeholder="USDT Payable" :readonly="isPurchaseProcessing" />
-											</div>
-
-											<button v-if="wallet.isConnected" type="submit" :disabled="isPurchaseProcessing" class="btn1 primary-btn submit-btn w-100 mb20">
-												<i v-show="isPurchaseProcessing" class="fa fa-spinner fa-spin me-1"></i>
-												{{ walletText }}
-											</button>
-											<button v-else type="button" @click="modal.open()" class="btn1 primary-btn submit-btn w-100 mb20">{{ walletText }}</button>
-										</form>
-									</template>
-								</div>
-							</div>
-						</div>
-
+					<div class="ico-tab mb20">
 						<template v-if="isStageLoading">
-							<Skeletor height="55" />
+							<div class="d-flex align-items-center g-20">
+								<Skeletor width="50%" as="div" height="54" pill />
+								<Skeletor width="50%" as="div" height="54" pill />
+							</div>
 						</template>
-						<template v-else>
-							<a v-if="trxHash" :href="`https://etherscan.io/tx/${trxHash}`" target="_blank" class="green-outline-btn d-flex align-items-center justify-content-between mt-20">
-								<span class="gradient-color"><b>Hash:</b></span>
-								<span class="clip-text">{{ trxHash }}</span>
-								<span class="text-copy-btn rotate-50"><i class="fa-solid fa-arrow-right-long"></i></span>
-							</a>
-						</template>
+						<ul v-else class="d-flex align-items-center g-20">
+							<li class="ico-tab-btn gradient-btn w-50" :class="{ active: activeTab === 'eth-coin-form' }" @click="switchTab('eth-coin-form')">
+								<nuxt-img src="/images/icon/eth.png" loading="lazy" alt="eth" />
+								Buy with ETH
+								<span class="ico-tab-select-icon"><i class="fa-solid fa-circle-check"></i></span>
+							</li>
+							<li class="ico-tab-btn gradient-btn w-50" :class="{ active: activeTab === 'usdt-coin-form' }" @click="switchTab('usdt-coin-form')">
+								<nuxt-img src="/images/icon/usdt.png" alt="ecm" />
+								Buy with USDT
+								<span class="ico-tab-select-icon"><i class="fa-solid fa-circle-check"></i></span>
+							</li>
+						</ul>
+					</div>
 
-						<div :class="['mt-3', { 'text-center': !isStageLoading }]">
-							<Skeletor v-if="isStageLoading" height="55" />
-							<button v-else-if="wallet.isConnected" type="button" class="red-outline-btn w-100 d-flex justify-content-center align-items-center mt-20" :disabled="isPurchaseProcessing" @click.prevent="disconnect">
-								Disconnect
-								<IconsDisconnect />
-							</button>
+					<div v-show="activeTab === 'eth-coin-form'" class="ico-tab-content">
+						<template v-if="isStageLoading">
+							<Skeletor height="30" pill class="mb-4" />
+						</template>
+						<ul v-else class="d-flex justify-content-center mt-1 mb20">
+							<li class="text-white">1 ECM = {{ stageData.price }} ETH</li>
+						</ul>
+
+						<div class="subscribe-form">
+							<template v-if="isStageLoading">
+								<Skeletor v-for="i in 3" :key="i" class="mt-2" height="55"></Skeletor>
+							</template>
+							<template v-else>
+								<form @submit.prevent="purchaseECM('ETH')">
+									<div class="subscribe-email mb20 d-flex align-items-center mw-100">
+										<nuxt-img src="/images/icon/ecm.png" alt="icon" />
+										<input v-model="ecm" type="text" placeholder="ECM Amount" :readonly="isPurchaseProcessing" />
+									</div>
+									<div class="subscribe-email mb20 d-flex align-items-center mw-100">
+										<nuxt-img src="/images/icon/eth.png" alt="icon" />
+										<input v-model="eth" type="text" placeholder="ETH Payable" :readonly="isPurchaseProcessing" />
+									</div>
+									<button v-if="wallet.isConnected" type="submit" :disabled="isPurchaseProcessing" class="btn1 primary-btn submit-btn w-100 mb20">
+										<i v-show="isPurchaseProcessing" class="fa fa-spinner fa-spin me-1"></i>
+										{{ walletText }}
+									</button>
+									<button v-else type="button" @click="modal.open()" class="btn1 primary-btn submit-btn w-100 mb20">{{ walletText }}</button>
+								</form>
+							</template>
+						</div>
+					</div>
+					<div v-show="activeTab === 'usdt-coin-form'" class="ico-tab-content">
+						<template v-if="isStageLoading">
+							<Skeletor height="30" pill class="mb-4" />
+						</template>
+						<ul v-else class="d-flex justify-content-center mt-1 mb20">
+							<li class="text-white">1 ECM = {{ stageData.usdtPrice }} USDT</li>
+						</ul>
+
+						<div class="subscribe-form">
+							<template v-if="isStageLoading">
+								<Skeletor v-for="i in 3" :key="i" class="mt-2" height="55"></Skeletor>
+							</template>
+							<template v-else>
+								<form @submit.prevent="purchaseECM('USDT')">
+									<div class="subscribe-email mb20 d-flex align-items-center mw-100">
+										<nuxt-img src="/images/icon/ecm.png" alt="icon" />
+										<input v-model="ecm" type="text" placeholder="ECM Amount" :readonly="isPurchaseProcessing" />
+									</div>
+									<div class="subscribe-email mb20 d-flex align-items-center mw-100">
+										<nuxt-img src="/images/icon/usdt.png" alt="icon" />
+										<input v-model="usdt" type="text" placeholder="USDT Payable" :readonly="isPurchaseProcessing" />
+									</div>
+
+									<button v-if="wallet.isConnected" type="submit" :disabled="isPurchaseProcessing" class="btn1 primary-btn submit-btn w-100 mb20">
+										<i v-show="isPurchaseProcessing" class="fa fa-spinner fa-spin me-1"></i>
+										{{ walletText }}
+									</button>
+									<button v-else type="button" @click="modal.open()" class="btn1 primary-btn submit-btn w-100 mb20">{{ walletText }}</button>
+								</form>
+							</template>
 						</div>
 					</div>
 				</div>
+
+				<template v-if="isStageLoading">
+					<Skeletor height="55" />
+				</template>
+				<template v-else>
+					<a v-if="trxHash" :href="`https://etherscan.io/tx/${trxHash}`" target="_blank" class="green-outline-btn d-flex align-items-center justify-content-between mt-20">
+						<span class="gradient-color"><b>Hash:</b></span>
+						<span class="clip-text">{{ trxHash }}</span>
+						<span class="text-copy-btn rotate-50"><i class="fa-solid fa-arrow-right-long"></i></span>
+					</a>
+				</template>
+
+				<div :class="['mt-3', { 'text-center': !isStageLoading }]">
+					<Skeletor v-if="isStageLoading" height="55" />
+					<button v-else-if="wallet.isConnected" type="button" class="red-outline-btn w-100 d-flex justify-content-center align-items-center mt-20" :disabled="isPurchaseProcessing" @click.prevent="disconnect">
+						Disconnect
+						<IconsDisconnect />
+					</button>
+				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </template>
 
 <script setup>

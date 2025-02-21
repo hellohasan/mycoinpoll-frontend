@@ -3,7 +3,13 @@
 		<FrontendHomeHero />
 		<FrontendHomeChain />
 		<FrontendHomeRunningToken />
-		<EcmPurchase />
+
+		<section class="ecm-section position-relative ptb120">
+			<div class="container">
+				<EcmPurchase />
+			</div>
+		</section>
+
 		<FrontendHomeUpcomingToken />
 		<FrontendHomeWhyChoose />
 		<FrontendHomeMultiChainPower />

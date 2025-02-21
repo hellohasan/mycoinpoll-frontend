@@ -57,8 +57,7 @@
 </template>
 
 <script setup>
-
-	const router = useRouter();
+	const { toastSuccess } = useToastAlert();
 	const form = useVForm({
 		unique_id: '',
 		password: '',
@@ -67,12 +66,13 @@
 
 	const handelSubmit = async () => {
 		const queryString = window.location.search;
-		await form.post(`/auth/reset-password${queryString}`).then((res) => {
-			console.log(res);
-			toast.success('Password Updated, Login now.');
+		await form.submit(`/auth/reset-password${queryString}`).then((res) => {
+			toastSuccess('Password Updated, Login now.');
 			form.reset();
 			navigateTo('/auth/login');
-		}).catch((error) => { })
+		}).catch((error) => {
+			console.log(error);
+		})
 	}
 
 	onMounted(() => {

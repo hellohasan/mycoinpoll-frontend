@@ -75,7 +75,7 @@
 	});
 
 	const { useMyFetch } = useApi();
-	const { data: newsList, pending, error } = useMyFetch('get-news');
+	const { data: newsList, pending, error } = await useMyFetch('get-news');
 </script>
 
 <style>

@@ -101,9 +101,11 @@ declare global {
   const useAppConfig: typeof import('../../node_modules/nuxt/dist/app/config')['useAppConfig']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAuthHelper: typeof import('../../composables/useAuthHelper')['useAuthHelper']
   const useAuthStore: typeof import('../../stores/useAuthStore')['useAuthStore']
+  const useClipboard: typeof import('../../composables/useClipboard')['useClipboard']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app/composables/cookie')['useCookie']
-  const useCopy: typeof import('../../composables/useClipboard')['useCopy']
+  const useCsrf: typeof import('../../composables/useCsrf')['useCsrf']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useError: typeof import('../../node_modules/nuxt/dist/app/composables/error')['useError']
@@ -171,6 +173,7 @@ declare global {
   const useToastAlert: typeof import('../../composables/useToastAlert')['useToastAlert']
   const useTokenStore: typeof import('../../stores/useTokenStore')['useTokenStore']
   const useTransitionState: typeof import('vue')['useTransitionState']
+  const useUserTokenStore: typeof import('../../stores/useUserTokenStore')['useUserTokenStore']
   const useVForm: typeof import('../../composables/useVForm')['useVForm']
   const useWeb3: typeof import('../../composables/useWeb3')['useWeb3']
   const watch: typeof import('vue')['watch']
@@ -294,9 +297,11 @@ declare module 'vue' {
     readonly useAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/config')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useAuthHelper: UnwrapRef<typeof import('../../composables/useAuthHelper')['useAuthHelper']>
     readonly useAuthStore: UnwrapRef<typeof import('../../stores/useAuthStore')['useAuthStore']>
+    readonly useClipboard: UnwrapRef<typeof import('../../composables/useClipboard')['useClipboard']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/cookie')['useCookie']>
-    readonly useCopy: UnwrapRef<typeof import('../../composables/useClipboard')['useCopy']>
+    readonly useCsrf: UnwrapRef<typeof import('../../composables/useCsrf')['useCsrf']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['useError']>
@@ -364,6 +369,7 @@ declare module 'vue' {
     readonly useToastAlert: UnwrapRef<typeof import('../../composables/useToastAlert')['useToastAlert']>
     readonly useTokenStore: UnwrapRef<typeof import('../../stores/useTokenStore')['useTokenStore']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
+    readonly useUserTokenStore: UnwrapRef<typeof import('../../stores/useUserTokenStore')['useUserTokenStore']>
     readonly useVForm: UnwrapRef<typeof import('../../composables/useVForm')['useVForm']>
     readonly useWeb3: UnwrapRef<typeof import('../../composables/useWeb3')['useWeb3']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

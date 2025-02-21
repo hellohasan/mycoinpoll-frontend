@@ -72,7 +72,7 @@
 	});
 	const route = useRoute();
 	const { useMyFetch } = useApi();
-	const { data: lesson, pending, error } = useMyFetch(`get-lessons/${route.params.slug}`);
+	const { data: lesson, pending, error } = await useMyFetch(`get-lessons/${route.params.slug}`);
 </script>
 
 <style>

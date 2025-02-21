@@ -25,12 +25,7 @@ export const useAuthStore = defineStore("authentication", {
       this.roles = response.roles;
       this.permissions = response.permissions;
     },
-    clearUser() {
-      this.user = null;
-      this.token = null;
-      this.roles = [];
-      this.permissions = [];
-    },
+
     updateUser(response) {
       this.user = response;
     },

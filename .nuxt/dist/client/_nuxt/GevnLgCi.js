@@ -1,0 +1,1 @@
+import{useToast as s}from"./CefQi9ay.js";const o=()=>{const r=s();return{toastSuccess:n=>{r==null||r.success(n)},toastError:n=>{r==null||r.error(n)},toastWarning:n=>{r==null||r.warning(n)},toastInfo:n=>{r==null||r.info(n)}}};export{o as u};
