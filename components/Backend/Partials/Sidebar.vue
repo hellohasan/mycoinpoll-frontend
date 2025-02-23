@@ -42,25 +42,25 @@
 					</nuxt-link>
 				</li>
 
-				<!-- <li v-role="['Super Admin']">
-					<nuxt-link :to="{ name: 'users' }" active-class="menu-active-bg">
-						<img src="/assets/images/dashboard/icon/users.svg" alt="icon" />
+				<li v-if="hasRole(['Super Admin'])">
+					<nuxt-link :to="{ name: 'dashboard-users' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/users.svg" alt="icon" />
 						<span class="left-menu-text">Manage Users</span>
 					</nuxt-link>
 				</li>
-				<li v-role="['Super Admin']">
-					<nuxt-link :to="{ name: 'manage-tokens.index' }" active-class="menu-active-bg">
-						<img src="/assets/images/dashboard/icon/token.svg" alt="icon" />
+				<li v-if="hasRole(['Super Admin'])">
+					<nuxt-link :to="{ name: 'dashboard-manage-tokens' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/token.svg" alt="icon" />
 						<span class="left-menu-text">Manage Token</span>
 					</nuxt-link>
 				</li>
-				<li v-role="['Super Admin']">
-					<nuxt-link :to="{ name: 'manage-news.index' }" active-class="menu-active-bg">
-						<img src="/assets/images/dashboard/icon/news.svg" alt="icon" />
+				<li v-if="hasRole(['Super Admin'])">
+					<nuxt-link :to="{ name: 'dashboard-manage-news' }" active-class="menu-active-bg">
+						<img src="/images/dashboard/icon/news.svg" alt="icon" />
 						<span class="left-menu-text">Manage News</span>
 					</nuxt-link>
 				</li>
-				<li v-role="['Super Admin']">
+				<!-- <li v-role="['Super Admin']">
 					<nuxt-link :to="{ name: 'manage-blog.index' }" active-class="menu-active-bg">
 						<img src="/assets/images/dashboard/icon/news.png" alt="icon" />
 						<span class="left-menu-text">Manage Blog</span>
@@ -90,7 +90,8 @@
 	</div>
 </template>
 
-<script  setup>
+<script setup>
+	const { hasRole } = useAuthAccess();
 	const { logout } = useAuthHelper();
 </script>
 

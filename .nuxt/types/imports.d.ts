@@ -101,6 +101,7 @@ declare global {
   const useAppConfig: typeof import('../../node_modules/nuxt/dist/app/config')['useAppConfig']
   const useAsyncData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useAsyncData']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAuthAccess: typeof import('../../composables/useAuthAccess')['useAuthAccess']
   const useAuthHelper: typeof import('../../composables/useAuthHelper')['useAuthHelper']
   const useAuthStore: typeof import('../../stores/useAuthStore')['useAuthStore']
   const useClipboard: typeof import('../../composables/useClipboard')['useClipboard']
@@ -169,6 +170,7 @@ declare global {
   const useSlots: typeof import('vue')['useSlots']
   const useStageDataStore: typeof import('../../stores/useStageDataStore')['useStageDataStore']
   const useState: typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']
+  const useSweetAlert: typeof import('../../composables/useSweetAlert')['useSweetAlert']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useToastAlert: typeof import('../../composables/useToastAlert')['useToastAlert']
   const useTokenStore: typeof import('../../stores/useTokenStore')['useTokenStore']
@@ -297,6 +299,7 @@ declare module 'vue' {
     readonly useAppConfig: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/config')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useAuthAccess: UnwrapRef<typeof import('../../composables/useAuthAccess')['useAuthAccess']>
     readonly useAuthHelper: UnwrapRef<typeof import('../../composables/useAuthHelper')['useAuthHelper']>
     readonly useAuthStore: UnwrapRef<typeof import('../../stores/useAuthStore')['useAuthStore']>
     readonly useClipboard: UnwrapRef<typeof import('../../composables/useClipboard')['useClipboard']>
@@ -365,6 +368,7 @@ declare module 'vue' {
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useStageDataStore: UnwrapRef<typeof import('../../stores/useStageDataStore')['useStageDataStore']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/state')['useState']>
+    readonly useSweetAlert: UnwrapRef<typeof import('../../composables/useSweetAlert')['useSweetAlert']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useToastAlert: UnwrapRef<typeof import('../../composables/useToastAlert')['useToastAlert']>
     readonly useTokenStore: UnwrapRef<typeof import('../../stores/useTokenStore')['useTokenStore']>

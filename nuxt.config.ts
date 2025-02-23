@@ -89,7 +89,7 @@ export default defineNuxtConfig({
   },
   vite: {
     server: {
-      allowedHosts: ["mycoinpoll-frontend.test"],
+      allowedHosts: ["app.mycoionpoll-nano.test"],
     },
   },
 });

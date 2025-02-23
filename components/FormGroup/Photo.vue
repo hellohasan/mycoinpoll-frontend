@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-	import { ref, computed, onMounted, watch } from 'vue'
+	import { ref, computed, onMounted, watch } from 'vue';
 	import Swal from 'sweetalert2'
 	import { Popover } from 'bootstrap';
 

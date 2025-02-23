@@ -16,7 +16,7 @@
 <script setup>
 	import { computed, onMounted, watch } from 'vue'
 	import 'bootstrap5-toggle/css/bootstrap5-toggle.min.css'
-	import 'bootstrap5-toggle'
+	import 'bootstrap5-toggle';
 
 	const model = defineModel()
 

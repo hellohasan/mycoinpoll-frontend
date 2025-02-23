@@ -119,7 +119,7 @@
 						</div>
 						<div class="lock-overview d-flex align-items-center justify-content-center mt-2">
 							<div class="selected-staking-title d-flex align-items-center g-10">
-								<nuxt-img src="/images/icon/ecm.png" sizes="5vw" loading="lazy" placeholder placeholder-class="rounded-circle" alt="icon" />
+								<nuxt-img src="/images/icon/ecm.png" width="30" loading="lazy" placeholder placeholder-class="rounded-circle" alt="icon" />
 								<h6 class="page-title">My {{ amount }} ECM Stack for {{ duration }} Days</h6>
 							</div>
 						</div>

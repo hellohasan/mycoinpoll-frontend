@@ -8,14 +8,17 @@ export function useApi() {
 
   const fetchOptions = <T>(): UseFetchOptions<T> => ({
     baseURL: config.public.apiBase,
-
+    credentials: "include",
     onRequest({ options }) {
+      const headers = new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      });
       if (auth.token) {
-        if (!(options.headers instanceof Headers)) {
-          options.headers = new Headers(options.headers);
-        }
-        options.headers.set("Authorization", `Bearer ${auth.token}`);
+        headers.set("Authorization", `Bearer ${auth.token}`);
       }
+      options.headers = headers;
     },
 
     onRequestError({ error }) {
