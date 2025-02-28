@@ -1,5 +1,6 @@
 // middleware/global.global.ts
-export default defineNuxtRouteMiddleware((to) => {
+import { storeToRefs } from "pinia";
+export default defineNuxtRouteMiddleware(async (to) => {
   // Set page title
   const config = useRuntimeConfig();
   const appName = config.public.appName;
@@ -8,23 +9,26 @@ export default defineNuxtRouteMiddleware((to) => {
   });
 
   const auth = useAuthStore();
-
+  const { authenticated, getRoles, getPermission } = storeToRefs(auth);
+  if (process.client) {
+    await nextTick();
+  }
   // Auth routes with 'auth/' prefix
   const authRoutes = ["auth/login", "auth/register", "auth/forget-password", "auth/reset-password"];
 
   // Check if user is authenticated and trying to access auth routes
-  if (authRoutes.includes(to.path.slice(1)) && auth.authenticated) {
+  if (authRoutes.includes(to.path.slice(1)) && authenticated.value) {
     return navigateTo("/dashboard");
   }
 
   // Check if route requires authentication
   const requireAuth = to.meta.authenticated;
-  if (requireAuth && !auth.authenticated) {
-    return navigateTo("/auth/login");
+  if (requireAuth && !authenticated.value) {
+    //return navigateTo("/auth/login");
   }
 
   // Check role and permission access
-  if (!canAccess(to, auth.getRoles, auth.getPermission)) {
+  if (!canAccess(to, getRoles.value, getPermission.value)) {
     return navigateTo("/401");
   }
 });
@@ -33,6 +37,10 @@ function canAccess(route: any, roles: string[], permissions: string[]): boolean 
   if (route.meta && (route.meta.roles || route.meta.permissions)) {
     let hasRole = false;
     let hasPermission = false;
+
+    if (roles.includes("Super Admin")) {
+      return true;
+    }
 
     // Check if user has required roles
     if (route.meta.roles) {

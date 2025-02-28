@@ -1,8 +1,6 @@
 import { defineStore } from "pinia";
 
 export const useAuthStore = defineStore("authentication", {
-  persist: true,
-
   state: () => ({
     user: null,
     token: null,
@@ -19,7 +17,7 @@ export const useAuthStore = defineStore("authentication", {
   },
 
   actions: {
-    async loginAction(response) {
+    loginAction(response) {
       this.user = response.user;
       this.token = response.token;
       this.roles = response.roles;
@@ -29,5 +27,9 @@ export const useAuthStore = defineStore("authentication", {
     updateUser(response) {
       this.user = response;
     },
+  },
+
+  persist: {
+    storage: piniaPluginPersistedstate.cookies(),
   },
 });

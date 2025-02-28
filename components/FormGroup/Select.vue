@@ -139,9 +139,12 @@
 </script>
 
 <style>
+	.select2-container {
+		border: 2px solid;
+		border-radius: 5px !important;
+	}
 	.select2-container--bootstrap-5 .select2-selection--single {
-		background-color: #652f9f !important;
-		border-color: #875db4 !important;
+		background-color: #0b121c !important;
 		border-radius: 5px !important;
 		color: white !important;
 		height: 44px !important;
@@ -175,7 +178,7 @@
 	}
 
 	.select2-container--bootstrap-5 .select2-results__option--highlighted {
-		background-color: #652f9f !important;
+		background-color: #25a3cb !important;
 		color: white !important;
 	}
 
@@ -194,11 +197,14 @@
 	}
 
 	.select2-container--bootstrap-5 .select2-results__option--selected {
-		background-color: #652f9f !important;
+		background-color: #25a3cb !important;
 		color: white !important;
 	}
 
 	.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
+		color: #ffffff !important;
+	}
+	.select2-container .select2-selection--single .select2-selection__clear {
 		color: #ffffff !important;
 	}
 </style>

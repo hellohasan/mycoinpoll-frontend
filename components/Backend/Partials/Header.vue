@@ -45,9 +45,9 @@
 		} else {
 			walletText.value = 'Connect Wallet';
 		}
-		if (newValue?.status == 'disconnected') {
+		/* if (newValue?.status == 'disconnected') {
 			await logout();
-		}
+		} */
 	}, { deep: true });
 
 	const formatAddress = (address) => {

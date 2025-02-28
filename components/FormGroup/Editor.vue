@@ -4,7 +4,7 @@
 			{{ label }}:
 			<code v-if="message">{{ message }}</code>
 		</label>
-		<VueEditor class="border-image" v-model="model" :id="inputId" :editorOptions="editorOptions"></VueEditor>
+		<VueEditor class="border-image-g" v-model="model" :id="inputId" :editorOptions="editorOptions"></VueEditor>
 
 		<div v-if="error" class="invalid-feedback d-block">
 			{{ error }}
@@ -73,16 +73,20 @@
 <style>
 	.quillWrapper {
 		width: 100%;
+		border: 2px solid #133d4f;
+		border-radius: 5px;
 	}
 	.ql-toolbar.ql-snow,
 	.ql-container.ql-snow {
-		border: none !important;
+		border: none;
 	}
 	.ql-container {
 		border-radius: 0;
 	}
-	.ql-toolbar {
+	.quillWrapper .ql-snow.ql-toolbar {
 		border-radius: 0;
+		border: none;
+		border-bottom: 2px solid #133d4f;
 	}
 	.ql-toolbar button,
 	.ql-toolbar .ql-picker-label {
@@ -93,5 +97,8 @@
 	}
 	.ql-toolbar .ql-fill {
 		fill: #fff !important;
+	}
+	.ql-container.ql-snow {
+		border: none !important;
 	}
 </style>

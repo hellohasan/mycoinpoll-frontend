@@ -2,7 +2,9 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'BackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
+      'BackendDashboardUserInformation': typeof import("../components/Backend/Dashboard/UserInformation.vue")['default']
+    'BackendDashboardWalletChecker': typeof import("../components/Backend/Dashboard/WalletChecker.vue")['default']
+    'BackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
     'BackendPartialsPagination': typeof import("../components/Backend/Partials/Pagination.vue")['default']
     'BackendPartialsSidebar': typeof import("../components/Backend/Partials/Sidebar.vue")['default']
     'BackendPartialsTokenCard': typeof import("../components/Backend/Partials/TokenCard.vue")['default']
@@ -25,6 +27,7 @@ interface _GlobalComponents {
     'FormGroupTag': typeof import("../components/FormGroup/Tag.vue")['default']
     'FormGroupTextarea': typeof import("../components/FormGroup/Textarea.vue")['default']
     'FormGroupToggle': typeof import("../components/FormGroup/Toggle.vue")['default']
+    'FrontendBlogSidebar': typeof import("../components/Frontend/Blog/Sidebar.vue")['default']
     'FrontendBreadcrumb': typeof import("../components/Frontend/Breadcrumb.vue")['default']
     'FrontendFooter': typeof import("../components/Frontend/Footer.vue")['default']
     'FrontendHeader': typeof import("../components/Frontend/Header.vue")['default']
@@ -69,7 +72,9 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyBackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
+      'LazyBackendDashboardUserInformation': typeof import("../components/Backend/Dashboard/UserInformation.vue")['default']
+    'LazyBackendDashboardWalletChecker': typeof import("../components/Backend/Dashboard/WalletChecker.vue")['default']
+    'LazyBackendPartialsHeader': typeof import("../components/Backend/Partials/Header.vue")['default']
     'LazyBackendPartialsPagination': typeof import("../components/Backend/Partials/Pagination.vue")['default']
     'LazyBackendPartialsSidebar': typeof import("../components/Backend/Partials/Sidebar.vue")['default']
     'LazyBackendPartialsTokenCard': typeof import("../components/Backend/Partials/TokenCard.vue")['default']
@@ -92,6 +97,7 @@ interface _GlobalComponents {
     'LazyFormGroupTag': typeof import("../components/FormGroup/Tag.vue")['default']
     'LazyFormGroupTextarea': typeof import("../components/FormGroup/Textarea.vue")['default']
     'LazyFormGroupToggle': typeof import("../components/FormGroup/Toggle.vue")['default']
+    'LazyFrontendBlogSidebar': typeof import("../components/Frontend/Blog/Sidebar.vue")['default']
     'LazyFrontendBreadcrumb': typeof import("../components/Frontend/Breadcrumb.vue")['default']
     'LazyFrontendFooter': typeof import("../components/Frontend/Footer.vue")['default']
     'LazyFrontendHeader': typeof import("../components/Frontend/Header.vue")['default']
@@ -142,6 +148,8 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const BackendDashboardUserInformation: typeof import("../components/Backend/Dashboard/UserInformation.vue")['default']
+export const BackendDashboardWalletChecker: typeof import("../components/Backend/Dashboard/WalletChecker.vue")['default']
 export const BackendPartialsHeader: typeof import("../components/Backend/Partials/Header.vue")['default']
 export const BackendPartialsPagination: typeof import("../components/Backend/Partials/Pagination.vue")['default']
 export const BackendPartialsSidebar: typeof import("../components/Backend/Partials/Sidebar.vue")['default']
@@ -165,6 +173,7 @@ export const FormGroupSelect: typeof import("../components/FormGroup/Select.vue"
 export const FormGroupTag: typeof import("../components/FormGroup/Tag.vue")['default']
 export const FormGroupTextarea: typeof import("../components/FormGroup/Textarea.vue")['default']
 export const FormGroupToggle: typeof import("../components/FormGroup/Toggle.vue")['default']
+export const FrontendBlogSidebar: typeof import("../components/Frontend/Blog/Sidebar.vue")['default']
 export const FrontendBreadcrumb: typeof import("../components/Frontend/Breadcrumb.vue")['default']
 export const FrontendFooter: typeof import("../components/Frontend/Footer.vue")['default']
 export const FrontendHeader: typeof import("../components/Frontend/Header.vue")['default']
@@ -209,6 +218,8 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyBackendDashboardUserInformation: typeof import("../components/Backend/Dashboard/UserInformation.vue")['default']
+export const LazyBackendDashboardWalletChecker: typeof import("../components/Backend/Dashboard/WalletChecker.vue")['default']
 export const LazyBackendPartialsHeader: typeof import("../components/Backend/Partials/Header.vue")['default']
 export const LazyBackendPartialsPagination: typeof import("../components/Backend/Partials/Pagination.vue")['default']
 export const LazyBackendPartialsSidebar: typeof import("../components/Backend/Partials/Sidebar.vue")['default']
@@ -232,6 +243,7 @@ export const LazyFormGroupSelect: typeof import("../components/FormGroup/Select.
 export const LazyFormGroupTag: typeof import("../components/FormGroup/Tag.vue")['default']
 export const LazyFormGroupTextarea: typeof import("../components/FormGroup/Textarea.vue")['default']
 export const LazyFormGroupToggle: typeof import("../components/FormGroup/Toggle.vue")['default']
+export const LazyFrontendBlogSidebar: typeof import("../components/Frontend/Blog/Sidebar.vue")['default']
 export const LazyFrontendBreadcrumb: typeof import("../components/Frontend/Breadcrumb.vue")['default']
 export const LazyFrontendFooter: typeof import("../components/Frontend/Footer.vue")['default']
 export const LazyFrontendHeader: typeof import("../components/Frontend/Header.vue")['default']

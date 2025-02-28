@@ -21,7 +21,7 @@ const getAppKitConfig = (projectId: string) => ({
     socials: false,
     swaps: false,
   },
-  allWallets: "SHOW" as const,
+  allWallets: "SHOW",
   enableWalletConnect: true,
   enableCoinbase: true,
   featuredWalletIds: [

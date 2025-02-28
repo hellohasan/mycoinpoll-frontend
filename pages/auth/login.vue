@@ -71,7 +71,7 @@
 	import { useAppKitAccount, useAppKitProvider } from "@reown/appkit/vue";
 	import { BrowserProvider } from 'ethers';
 
-	const { loginAction } = useAuthStore();
+	const authStore = useAuthStore();
 	const { toastSuccess } = useToastAlert();
 	const wallet = useAppKitAccount();
 	const { modal, disconnect } = useWeb3();
@@ -88,7 +88,7 @@
 	const handelForm = async () => {
 		await getCsrfToken();
 		await form.submit('/auth/login').then(async (data) => {
-			await loginAction(data);
+			authStore.loginAction(data);
 			toastSuccess("Login successfully Completed.");
 			navigateTo('/dashboard');
 		}).catch((error) => { });
@@ -106,8 +106,7 @@
 		].join("\n");
 	};
 
-	const { useMyFetch } = useApi();
-	const config = useRuntimeConfig();
+	const { useOnlyFetch, myFetch } = useApi();
 	const handelWeb3Login = async () => {
 		isLoadingWallet.value = true;
 		if (!wallet.value.isConnected) {
@@ -125,18 +124,17 @@
 			const message = generateSignatureMessage(signer.address);
 			const signature = await signer.signMessage(message);
 			await getCsrfToken();
-			const { data } = await useMyFetch('/auth/web3-login', {
+			const response = await myFetch('/auth/web3-login', {
 				method: 'POST',
-				server: false,
 				body: {
 					message,
 					address: signer.address,
 					signature,
 				},
 			});
-			await loginAction(data.value);
+			authStore.loginAction(response);
 			toastSuccess("Login successfully completed");
-			await navigateTo('/dashboard');
+			navigateTo('/dashboard');
 		} catch (error) {
 			const errorMessage = {
 				'No signer available': 'Please check your wallet connection.',

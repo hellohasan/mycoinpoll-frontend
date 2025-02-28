@@ -482,6 +482,9 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .icon-rotate i{
+    font-size: 16px;
+  }
   .publish-date {
     font-size: 14px;
   }
@@ -1069,6 +1072,9 @@
     border-radius: 50px;
     font-size: 14px;
   }
+  .gradient-btn i{
+    font-size: 15px;
+  }
   .common-table.mt30{
     margin-top: 0;
   }
@@ -1107,5 +1113,15 @@
   }
   .pagination .subscribe-btn {
     min-width: 60px !important;
+  }
+  .countdown-area ul li:nth-child(odd){
+    height: 45px;
+    width: 45px;
+  }
+  .referral-list-item span,.referral-list-item p{
+    font-size: 12px;
+  }
+  .referral-list-item{
+    padding: 6px;
   }
 }

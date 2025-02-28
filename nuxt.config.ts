@@ -63,6 +63,7 @@ export default defineNuxtConfig({
       tokenSaleAddress: process.env.NUXT_TOKEN_SALE_ADDRESS,
       tokenAddress: process.env.NUXT_TOKEN_ADDRESS,
       usdtAddress: process.env.NUXT_USDT_ADDRESS,
+      StakingAddress: process.env.NUXT_STAKING_ADDRESS,
 
       web3ProjectId: process.env.NUXT_WEB3_PROJECT_ID,
       alchemyLink: process.env.NUXT_ALCHEMY_LINK,

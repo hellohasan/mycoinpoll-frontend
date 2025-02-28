@@ -3,7 +3,18 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import "@sweetalert2/theme-dark/dark.css";
 
 export function useSweetAlert() {
-  const toast = (text, icon = "success") => {
+  const getIconTitle = (icon, customTitle = null) => {
+    const iconTitles = {
+      success: "Well Done!",
+      error: "Error!",
+      warning: "Warning!",
+      info: "Information",
+      question: "Question",
+    };
+    return customTitle || iconTitles[icon] || "Notice";
+  };
+
+  const toast = (text, icon = "success", customTitle = null) => {
     Swal.fire({
       toast: true,
       position: "top-end",
@@ -11,7 +22,7 @@ export function useSweetAlert() {
       showCloseButton: true,
       timer: 5000,
       timerProgressBar: true,
-      title: text,
+      text,
       icon,
       didOpen: (toast) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
@@ -20,9 +31,10 @@ export function useSweetAlert() {
     });
   };
 
-  const confirm = async (text, icon = "warning") => {
+  const confirm = async (text, icon = "warning", title = "Are you sure?") => {
     const result = await Swal.fire({
-      title: text,
+      title,
+      text,
       icon,
       showCancelButton: true,
       confirmButtonText: "Yes",
@@ -31,9 +43,11 @@ export function useSweetAlert() {
     return result.isConfirmed;
   };
 
-  const alert = (text, icon = "success") => {
+  const alert = (text, icon = "success", customTitle = null) => {
+    const title = getIconTitle(icon, customTitle);
     Swal.fire({
-      title: text,
+      title,
+      text,
       icon,
     });
   };

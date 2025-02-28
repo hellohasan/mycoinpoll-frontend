@@ -130,6 +130,8 @@ declare module 'nuxt/schema' {
 
    usdtAddress: string,
 
+   StakingAddress: string,
+
    web3ProjectId: string,
 
    alchemyLink: string,

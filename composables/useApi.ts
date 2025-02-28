@@ -44,7 +44,7 @@ export function useApi() {
           toastError("Requested resource not found.");
           break;
         case 500:
-          //toastError("Internal server error.");
+          toastError("Internal server error.");
           break;
         default:
           toastError(response?._data?.message || "An error occurred");

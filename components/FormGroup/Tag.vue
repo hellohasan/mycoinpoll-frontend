@@ -4,7 +4,9 @@
 			{{ label }}:
 			<code v-if="message">{{ message }}</code>
 		</label>
-		<vue3-tags-input class="form-control" :modelValue="inputValue" :tags="tags" @update:modelValue="updateInputValue" @on-tags-changed="handleChangeTag" :placeholder="computedPlaceholder" />
+		<div class="input bg-border-input">
+			<vue3-tags-input class="form-control" :modelValue="inputValue" :tags="tags" @update:modelValue="updateInputValue" @on-tags-changed="handleChangeTag" :placeholder="computedPlaceholder" />
+		</div>
 		<div v-if="error" class="invalid-feedback d-block">
 			{{ error }}
 		</div>
@@ -55,3 +57,9 @@
 		model.value = newTags;
 	};
 </script>
+<style>
+	.v3ti {
+		background-color: #0b121c !important;
+		border: 1px solid #000000 !important;
+	}
+</style>

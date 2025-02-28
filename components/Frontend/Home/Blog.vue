@@ -20,7 +20,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row gy-4 mt-5">
+			<div class="row gy-4 mt-5" v-if="!pending">
 				<div class="col-lg-4 col-md-6" v-for="blog in blogList" :key="blog.id">
 					<div class="blog-post-card h-100">
 						<div class="blog-post-thumbnails">
@@ -47,6 +47,7 @@
 	</section>
 </template>
 <script setup>
-	const config = useRuntimeConfig();
-	const { data: blogList, pending, error } = await useFetch(`${config.public.apiBase}/blogs`);
+
+	const { useOnlyFetch } = useApi();
+	const { data: blogList, pending, error } = await useOnlyFetch(`/get-feature-blogs`);
 </script>

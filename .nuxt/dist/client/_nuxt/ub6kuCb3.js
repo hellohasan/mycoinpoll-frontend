@@ -1,0 +1,1 @@
+import{c as r,g as t,o}from"./--rz71Vb.js";const n=["innerHTML"],s={__name:"HasError",props:{form:{type:Object,required:!0},field:{type:String,required:!0}},setup(e){return(c,a)=>e.form.errors.has(e.field)?(o(),r("div",{key:0,class:"invalid-feedback d-block",innerHTML:e.form.errors.get(e.field)},null,8,n)):t("",!0)}};export{s as _};

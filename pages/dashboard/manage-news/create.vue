@@ -23,7 +23,7 @@
 							<FormGroupPhoto col="col-md-6" v-model="form.image" :error="form.errors.get('image')" message="Size: 428x358" label="News Small Image" />
 							<FormGroupPhoto col="col-md-6" v-model="form.image_large" :error="form.errors.get('image_large')" message="Size: 1232X626" label="News Large Image" />
 							<FormGroupToggle col="col-md-6" v-model="form.status" :error="form.errors.get('status')" label="News Status" />
-							<FormGroupTag col="col-md-6" v-model="form.tags" :error="form.errors.get('tags')" label="New Tag" />
+							<FormGroupTag col="col-md-6" v-model="form.tags" :error="form.errors.get('tags')" label="News Tag" />
 							<FormGroupEditor col="col-md-12" v-model="form.description" :error="form.errors.get('description')" label="News Description" />
 						</div>
 					</div>

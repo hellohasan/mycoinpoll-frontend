@@ -76,6 +76,7 @@
 	const users = ref([]);
 	const loading = ref(true);
 	const searchQuery = ref('');
+
 	const getUsers = async (page) => {
 		try {
 			const params = new URLSearchParams({

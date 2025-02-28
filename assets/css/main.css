@@ -11,7 +11,7 @@ h1,h3,h4,h5{
 }
 p{
   font-size:18px;
-  line-height: 30px;
+  line-height:28px;
   font-weight: 500;
   color:rgba(255, 255, 255, 0.8);
 }
@@ -583,6 +583,18 @@ a.nav-link.dropdown-toggle i{
   width: 52px;
   border-radius: 6px;
 }
+.countdown-area-sm ul li:nth-child(odd){
+  background: #FFFFFF26;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  height:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40px;
+  border-radius: 6px;
+}
 .event-countdown ul li:nth-child(odd){
   width: 90px;
   height: 90px;
@@ -980,7 +992,7 @@ a.nav-link.dropdown-toggle i{
 	padding: 0;
 	font-weight: 700;
 	font-size: 23px;
-	line-height: 45px;
+	line-height:32px;
 	color: #FFFFFFCC;
 	box-shadow: 0 0 0 transparent;
 }
@@ -994,7 +1006,7 @@ a.nav-link.dropdown-toggle i{
   outline: none;
 }
 .frequently-answere .accordion-item{
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   background: rgba(255, 255, 255, 0.05);
 }
 .social-menu span{
@@ -1111,6 +1123,30 @@ text-fill-color: transparent;
 .subscribe-email input::placeholder{
   opacity: 1;
 }
+input[type="date"] {
+  position: relative;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 40px 8px 12px; /* Add padding for the icon */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="date"]::after {
+  content: "\f073"; /* Unicode for calendar icon in Font Awesome */
+  font-family: "Font Awesome 6 Free"; 
+  font-weight: 900;
+  color: #ddd; /* Change this to your preferred color */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .subscribe-form input{
   border: none;
   background-color: transparent;
@@ -2116,11 +2152,11 @@ select {
 } 
 .bg-border-input{
   border-radius: 5px;
-  background:#0B121C;
+  background:#0b121ce5;
   border:2px solid transparent;
   background-clip: padding-box;
   position: relative;
-  /* z-index: 2; */
+  z-index: 2;
 }
 .bg-border-input::after {
 	content: '';
@@ -2491,10 +2527,19 @@ select {
   z-index: -1;
   border-radius: 32px;
 }
+ .filter-btn .select-icon{
+  right: 12px;
+ }
+ .filter-btn .select-selected{
+  font-weight: 600;
+ }
+ .filter-btn{
+  min-width:135px;
+ }
 .label{
   color:#fff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 10px;
   line-height: 22px;
 }
@@ -2540,9 +2585,9 @@ select {
   background: linear-gradient(0deg, #277BF5 0%, #1CD691 100.01%);
   color:#fff !important;
 }
-.custom-modal .bg-border-input{
+/* .custom-modal .bg-border-input{
   z-index: inherit;
-}
+} */
 .select-icon i{
   color:#fff;
 }
@@ -2643,10 +2688,10 @@ select {
 .rgb-border::after {
 	content: '';
 	position: absolute;
-	top: -3px;
-	left: -3px;
-	right: -3px;
-	bottom: -3px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
 	background: linear-gradient(90deg, rgba(39, 123, 245, 0.2) 0%, rgba(28, 214, 145, 0.2) 100.01%);
   border: 2px solid;
 	z-index: -1;
@@ -2890,7 +2935,7 @@ select {
   line-height: 22px;
   margin-right: 20px;
 }
-.yellow-color i{
+.yellow-color i,.yellow-color{
   color:#DFC730;
 }
 .notification-text h5{
@@ -2988,6 +3033,9 @@ select {
   line-height: 22px;
   color:#fff;
 }
+.g-5{
+  gap: 5px;
+}
 .user-balance-item span b{
   font-weight: 800;
 }
@@ -3046,7 +3094,6 @@ select {
   left: 2%;
   bottom: 0%;
 }
- 
 .dashboard-left-menu {
 	position: relative;
 	z-index: 2;
@@ -3059,6 +3106,7 @@ select {
   top: 50%;
   left:0;
   right: 0;
+  z-index: -2;
   margin: auto;
   transform: translateY(-50%);
 }
@@ -3279,6 +3327,11 @@ table th,table td {
 .pending-status{
   background: #DFC7301A;
   border-color:#DFC73066;
+}
+.in-progress-status{
+  background: #FF8C001A;
+
+  border-color:#FF8C0066;
 }
 .completed-status{
   background: #2682EE66;
@@ -3554,13 +3607,13 @@ ul.dropdown li:hover{
   font-size: 18px;
 }
 .skyblue{
-  color:#2682EE;
+  color:#2682EE !important;
 }
 .g-40{
   gap: 40px;
 }
 .green{
-  color:#359846;
+  color:#359846 !important;
 }
 .bg-green{
   background:#359846 !important;
@@ -3570,6 +3623,7 @@ ul.dropdown li:hover{
 }
 .red{
  color:#B92124 !important;
+ font-weight: 500;
 }
 .bg-red{
   background: #B92124 !important;
@@ -3591,7 +3645,7 @@ ul.dropdown li:hover{
   font-weight: 600;
   line-height: 22px;
   color:#fff;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .g20{
   gap: 20px;
@@ -4188,6 +4242,33 @@ ul.dropdown li:hover{
 }
 /* End staking section */
 /* Start millestone */
+.reward-tab{
+  gap: 4px;
+}
+.reward-tab li{
+  font-weight: 500;
+  font-size: 12px;
+  color:#FFFFFFCC;
+  padding: 3px 6px;
+  background: #2682EE1A;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.reward-tab li.active{
+  background: #2682EE99;
+}
+/* Style the tab content */
+.tabcontent p{
+  color: #FFFFFF99;
+  font-size: 14px;
+  line-height:24px;
+}
+.tabcontent {
+  display: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+}
 .milestone-offer-card{
   border: 1.5px solid #827D7D2E;
   border-radius: 5px;
@@ -4195,15 +4276,24 @@ ul.dropdown li:hover{
   background: #FFFFFF05;
 }
 .milestone-offer-info-item{
-  border-bottom: 1px solid #FFFFFF1A;
-  padding:6px 0;
+  padding:8px 18px;
+  border-bottom: 1px solid #FFFFFF1A
 }
 .milestone-offer-info-item:last-child{
   border: none;
 }
 .milestone-offer-info-item span{
-  font-weight: 500;
+  font-weight: 600;
   color:#fff;
+}
+.small-description span{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF99;
+}
+.milestone-offer-info-item p{
+  font-weight: 600;
 }
 .text-color-1CD691{
   color:#1CD691 !important;
@@ -4229,4 +4319,156 @@ ul.dropdown li:hover{
   font-size: 24px;
   text-align: center;
   font-weight: 500;
+}
+.profile-icon img{
+  height:52px;
+  width:52px;
+  border-radius: 50px;
+}
+.profile-info h5{
+  font-size:18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  color:#fff;
+}
+.profile-icon-sm img{
+  height: 40px;
+  width: 40px;
+}
+ .verify-btn p{
+  font-weight:700;
+ }
+ .section-heading h4{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    color:#fff;
+ }
+ .support-text ul li{
+  color:#FFFFFFCC;
+  font-size: 16px;
+ }
+ .support-text ul li a{
+  font-weight:700;
+  color: #2682EE;
+ }
+.verify-info-text h6{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  color:#fff;
+}
+.submition-history li img{
+  height:30px;
+  width: 30px;
+  margin-right: 10px;
+}
+.submition-history li{
+  color:#fff;
+  font-weight: 500;
+}
+/* Start ticket css */
+.ticket-author-icon img{
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+}
+.ticket-info-body h6{
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24.38px;
+  color:#fff;
+}
+.ticket-info-body span{
+  color: #FFFFFFB2;
+  font-weight: 400;
+  font-size: 14px;
+}
+.attachments-download{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(149, 157, 165, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.attachments-download i{
+  color: green;
+  font-size: 30px;
+}
+.attachments-thumbnails li:hover .attachments-download{
+  opacity: 1;
+}
+.ticket-author-box{
+  border-bottom: 1px solid #FFFFFF1A;
+  padding-bottom: 30px;
+}
+.ticket-author-box:last-child{
+  border: none !important;
+  padding-bottom: 0;
+}
+/* End ticket css */
+input[type="time"] {
+  position: relative;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 40px 8px 12px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+@keyframes colorChange {
+  0% {
+    background: linear-gradient(90deg, #277DF3 0%, #2589E5 100.01%); }
+  33% {
+    background: linear-gradient(90deg, #2495D8 0%, #239AD3 100.01%); }
+  75% {
+    background: linear-gradient(90deg, #20B1B9  0%, #20B8B2  100.01%); }
+  100% {
+    background: linear-gradient(90deg, #1EC99F 0%, #1CD394 100.01%); }
+}
+.animated-bg {
+  animation: colorChange 4s infinite linear;
+}
+.ticket-input-box .gradient-btn{
+  min-width: 130px;
+}
+.ticket-file-upload label{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+  align-items: center;
+  border: 1px solid #277BF5;
+  cursor: pointer;
+}
+.ticket-file-upload label:hover i{
+  color:#1EC6A3;
+}
+.ticket-file-upload input{
+  display: none;
+}
+.ticket-file-upload label i{
+  color:#fff;
+  transition: 0.5s;
+  font-size: 18px;
+}
+.ticket-input-box .bg-border-input{
+  padding: 4px;
+  padding-right: 10px;
+}
+.ticket-input-box .bg-border-input{
+  border-radius: 26px;
+}
+.ticket-input-box .bg-border-input:after{
+  border-radius: 25px;
 }

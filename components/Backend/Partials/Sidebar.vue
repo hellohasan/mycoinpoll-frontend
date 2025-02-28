@@ -56,22 +56,36 @@
 				</li>
 				<li v-if="hasRole(['Super Admin'])">
 					<nuxt-link :to="{ name: 'dashboard-manage-news' }" active-class="menu-active-bg">
-						<img src="/images/dashboard/icon/news.svg" alt="icon" />
+						<nuxt-img src="/images/dashboard/icon/news.svg" alt="icon" />
 						<span class="left-menu-text">Manage News</span>
 					</nuxt-link>
 				</li>
-				<!-- <li v-role="['Super Admin']">
-					<nuxt-link :to="{ name: 'manage-blog.index' }" active-class="menu-active-bg">
-						<img src="/assets/images/dashboard/icon/news.png" alt="icon" />
+				<li v-if="hasPermission(['manage-blog'])">
+					<nuxt-link :to="{ path: '/dashboard/manage-blog' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/news.png" alt="icon" />
 						<span class="left-menu-text">Manage Blog</span>
 					</nuxt-link>
 				</li>
-				<li v-role="['Super Admin']">
-					<nuxt-link :to="{ name: 'manage-learn.index' }" active-class="menu-active-bg">
-						<img src="/assets/images/dashboard/icon/learn.svg" alt="icon" />
+
+				<li v-if="hasPermission(['manage-learn'])">
+					<nuxt-link :to="{ path: '/dashboard/manage-learn' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/learn.svg" alt="icon" />
 						<span class="left-menu-text">Manage Learn</span>
 					</nuxt-link>
-				</li>-->
+				</li>
+
+				<li v-if="hasRole(['Super Admin'])">
+					<nuxt-link :to="{ name: 'dashboard-manage-role' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/roles.png" alt="icon" />
+						<span class="left-menu-text">Manage Roles</span>
+					</nuxt-link>
+				</li>
+				<li v-if="hasRole(['Super Admin'])">
+					<nuxt-link :to="{ name: 'dashboard-manage-permissions' }" active-class="menu-active-bg">
+						<nuxt-img src="/images/dashboard/icon/roles.png" alt="icon" />
+						<span class="left-menu-text">Manage Permissions</span>
+					</nuxt-link>
+				</li>
 
 				<li>
 					<nuxt-link :to="{ name: 'dashboard-profile' }" active-class="menu-active-bg">
@@ -91,7 +105,7 @@
 </template>
 
 <script setup>
-	const { hasRole } = useAuthAccess();
+	const { hasRole, hasPermission } = useAuthAccess();
 	const { logout } = useAuthHelper();
 </script>
 

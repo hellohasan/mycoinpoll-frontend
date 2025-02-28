@@ -23,6 +23,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="refer-link-box mt30">
 			<div class="input bg-border-input">
 				<div class="refer-link-box-inner p30">
@@ -37,6 +38,12 @@
 			</div>
 		</div>
 
+		<BackendDashboardWalletChecker />
+
+		<ClientOnly>
+			<BackendDashboardUserInformation />
+		</ClientOnly>
+
 		<div class="user-coin-balance-box mt30">
 			<div class="row gy-4">
 				<div v-for="token in tokens" :key="token.id" class="col-xxl-4 col-xl-6">
@@ -48,7 +55,6 @@
 </template>
 
 <script setup>
-
 	definePageMeta({
 		authenticated: true,
 		layout: 'backend',
@@ -76,9 +82,6 @@
 	});
 
 
-	/* const api = useApi();
-	const { data } = api.useMyFetch('/user');
-	console.log(data.value); */
 </script>
 
 <style>

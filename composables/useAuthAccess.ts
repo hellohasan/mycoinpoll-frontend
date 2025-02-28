@@ -4,12 +4,26 @@
 export const useAuthAccess = () => {
   const authStore = useAuthStore();
 
+  // Super admin role constant
+  const SUPER_ADMIN_ROLE = "Super Admin";
+
+  /**
+   * Check if the user is a super admin.
+   * @returns boolean
+   */
+  const isSuperAdmin = (): boolean => {
+    return authStore.roles.includes(SUPER_ADMIN_ROLE);
+  };
+
   /**
    * Check if the user has at least one of the required roles.
    * @param roles - A role or list of roles.
    * @returns boolean
    */
   const hasRole = (roles: string[] | string): boolean => {
+    // Super admin has all roles
+    if (isSuperAdmin()) return true;
+
     const userRoles = authStore.roles as string[];
 
     if (!Array.isArray(roles)) roles = [roles];
@@ -22,6 +36,9 @@ export const useAuthAccess = () => {
    * @returns boolean
    */
   const hasPermission = (permissions: string[] | string): boolean => {
+    // Super admin has all permissions
+    if (isSuperAdmin()) return true;
+
     const userPermissions = authStore.permissions as string[];
 
     if (!Array.isArray(permissions)) permissions = [permissions];
@@ -35,6 +52,9 @@ export const useAuthAccess = () => {
    * @returns boolean
    */
   const hasAnyRoleOrPermission = (roles: string[] | string = [], permissions: string[] | string = []): boolean => {
+    // Super admin has all roles and permissions
+    if (isSuperAdmin()) return true;
+
     return hasRole(roles) || hasPermission(permissions);
   };
 
@@ -44,6 +64,9 @@ export const useAuthAccess = () => {
    * @returns boolean
    */
   const hasAllRoles = (roles: string[] | string): boolean => {
+    // Super admin has all roles
+    if (isSuperAdmin()) return true;
+
     if (!Array.isArray(roles)) roles = [roles];
     return roles.every((role) => authStore.roles.includes(role));
   };
@@ -54,6 +77,9 @@ export const useAuthAccess = () => {
    * @returns boolean
    */
   const hasAllPermissions = (permissions: string[] | string): boolean => {
+    // Super admin has all permissions
+    if (isSuperAdmin()) return true;
+
     if (!Array.isArray(permissions)) permissions = [permissions];
     return permissions.every((permission) => authStore.permissions.includes(permission));
   };
@@ -64,5 +90,6 @@ export const useAuthAccess = () => {
     hasAnyRoleOrPermission,
     hasAllRoles,
     hasAllPermissions,
+    isSuperAdmin,
   };
 };
